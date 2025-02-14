@@ -60,12 +60,12 @@ export default function QuizPage({ params }: { params: { id: string } }) {
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-2xl text-cyan-400 mb-6 text-center">{question.question}</h3>
-          <div className={`grid ${question.type === "image" ? "grid-cols-2" : "grid-cols-1"} gap-4`}>
+          <div className={`grid ${question.type === "image" ? "grid-cols-2" : "grid-cols-1"} gap-2`}>
             {question.options.map((option, index) => (
               <motion.button
                 key={index}
                 onClick={() => setSelected(typeof option === "string" ? option : option.alt)}
-                className={`p-4 rounded-lg text-lg transition-all duration-300 ${
+                className={`p-2 rounded-lg text-md transition-all duration-300 ${
                   selected === (typeof option === "string" ? option : option.alt)
                     ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
                     : "bg-gray-800 text-cyan-400 hover:bg-gray-700"
@@ -87,12 +87,12 @@ export default function QuizPage({ params }: { params: { id: string } }) {
                         : option.image
                     }
                     alt={(option as ImageOption).alt}
-                    width={200}
-                    height={200}
+                    width={150}
+                    height={150}
                     className="rounded-lg"
                   />
                 ) : (
-                  option
+                  <span className="text-sm">{option}</span>
                 )}
               </motion.button>
             ))}
@@ -101,7 +101,7 @@ export default function QuizPage({ params }: { params: { id: string } }) {
         <div className="flex justify-between sticky bottom-0 bg-black bg-opacity-60 py-4 px-2 rounded-lg">
           <motion.button
             onClick={handleBack}
-            className="px-6 py-3 bg-gray-700 text-cyan-400 text-lg rounded-lg hover:bg-gray-600 transition-all duration-300"
+            className="px-4 py-2 bg-gray-700 text-cyan-400 text-md rounded-lg hover:bg-gray-600 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -110,7 +110,7 @@ export default function QuizPage({ params }: { params: { id: string } }) {
           <motion.button
             onClick={handleNext}
             disabled={!selected}
-            className={`px-6 py-3 text-lg rounded-lg transition-all duration-300 ${
+            className={`px-4 py-2 text-md rounded-lg transition-all duration-300 ${
               selected ? "neon-button" : "bg-gray-700 text-gray-400 cursor-not-allowed"
             }`}
             whileHover={selected ? { scale: 1.05 } : {}}
