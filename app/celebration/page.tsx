@@ -19,11 +19,11 @@ export default function CelebrationPage() {
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-    function randomInRange(min: number, max: number) {
+    function randomInRange(min, max) {
       return Math.random() * (max - min) + min;
     }
 
-    const interval: any = setInterval(() => {
+    const interval = setInterval(() => {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
@@ -59,8 +59,8 @@ export default function CelebrationPage() {
         <h1 className="text-4xl md:text-3xl emerald-text mb-8">{title}</h1>
         <div className="relative w-64 h-64 md:w-96 md:h-96 mb-8 mx-auto">
           <Image
-            src="/emeraldcity.jpg"
-            alt="Emerald City Rizzverse"
+            src="/frame.png"
+            alt="Emerald City Rizzverse QR Code"
             fill
             className="object-contain"
           />
@@ -95,7 +95,6 @@ export default function CelebrationPage() {
             ></div>
           </div>
           <p className="text-xl text-cyan-400 mt-2">100% - Ultimate Brainrot Achieved!</p>
-          
         </motion.div>
       </motion.div>
     </div>
