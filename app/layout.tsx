@@ -3,6 +3,7 @@
 import { Press_Start_2P } from "next/font/google"
 import "./globals.css"
 import type React from "react"
+import { AudioProvider } from "@/components/audio-provider"
 
 const pressStart = Press_Start_2P({
   weight: "400",
@@ -43,7 +44,10 @@ export default function RootLayout({
             box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
           }
         `}</style>
-        {children}
+        <body className={`${pressStart.className} bg-black min-h-screen`}>
+        <AudioProvider>{children}</AudioProvider>
+      </body>
+       
       </body>
     </html>
   )

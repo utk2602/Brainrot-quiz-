@@ -30,13 +30,13 @@ export default function CelebrationPage() {
         Object.assign({}, defaults, {
           particleCount,
           origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-        }),
+        })
       )
       confetti(
         Object.assign({}, defaults, {
           particleCount,
           origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-        }),
+        })
       )
     }, 250)
 
@@ -54,7 +54,7 @@ export default function CelebrationPage() {
         <h1 className="text-4xl md:text-6xl emerald-text mb-8">CERTIFIED BRAINROT</h1>
         <div className="relative w-64 h-64 md:w-96 md:h-96 mb-8 mx-auto">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6LehFbIA4oCPYMfd0Dw03eHSmqxny0.png"
+            src="/emeraldcity.jpg"
             alt="Emerald City Rizzverse"
             fill
             className="object-contain"
@@ -95,4 +95,3 @@ export default function CelebrationPage() {
     </div>
   )
 }
-

@@ -1,46 +1,46 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { questions } from "@/app/data/questions"
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { questions } from "@/app/data/questions";
 
-type ImageOption = { image: string; alt: string }
+type ImageOption = { image: string; alt: string };
 
 export default function QuizPage({ params }: { params: { id: string } }) {
-  const router = useRouter()
-  const [questionId, setQuestionId] = useState(1)
-  const [question, setQuestion] = useState(questions[0])
-  const [selected, setSelected] = useState<string>("")
+  const router = useRouter();
+  const [questionId, setQuestionId] = useState(1);
+  const [question, setQuestion] = useState(questions[0]);
+  const [selected, setSelected] = useState<string>("");
 
   useEffect(() => {
-    const id = Number.parseInt(params.id)
+    const id = Number.parseInt(params.id);
     if (id >= 1 && id <= questions.length) {
-      setQuestionId(id)
-      setQuestion(questions[id - 1])
+      setQuestionId(id);
+      setQuestion(questions[id - 1]);
     } else {
-      router.push("/")
+      router.push("/");
     }
-  }, [params.id, router])
+  }, [params.id, router]);
 
   const handleNext = () => {
     if (questionId === questions.length) {
-      router.push("/celebration")
+      router.push("/celebration");
     } else {
-      router.push(`/quiz/${questionId + 1}`)
+      router.push(`/quiz/${questionId + 1}`);
     }
-  }
+  };
 
   const handleBack = () => {
     if (questionId > 1) {
-      router.push(`/quiz/${questionId - 1}`)
+      router.push(`/quiz/${questionId - 1}`);
     } else {
-      router.push("/")
+      router.push("/");
     }
-  }
+  };
 
-  if (!question) return null
+  if (!question) return null;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
@@ -65,18 +65,27 @@ export default function QuizPage({ params }: { params: { id: string } }) {
               <motion.button
                 key={index}
                 onClick={() => setSelected(typeof option === "string" ? option : option.alt)}
-                className={`p-4 rounded-lg text-lg transition-all duration-300
-                          ${
-                            selected === (typeof option === "string" ? option : option.alt)
-                              ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
-                              : "bg-gray-800 text-cyan-400 hover:bg-gray-700"
-                          }`}
+                className={`p-4 rounded-lg text-lg transition-all duration-300 ${
+                  selected === (typeof option === "string" ? option : option.alt)
+                    ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
+                    : "bg-gray-800 text-cyan-400 hover:bg-gray-700"
+                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {question.type === "image" ? (
                   <Image
-                    src={(option as ImageOption).image || "/placeholder.svg"}
+                    src={
+                      option.alt === "Doge"
+                        ? "/doge.jpg"
+                        : option.alt === "Pepe"
+                        ? "/pepe.jpg"
+                        : option.alt === "Gigachad"
+                        ? "/gigachad.jpg"
+                        : option.alt === "Wojak"
+                        ? "/Wojak_cropped.jpg"
+                        : option.image
+                    }
                     alt={(option as ImageOption).alt}
                     width={200}
                     height={200}
@@ -89,7 +98,7 @@ export default function QuizPage({ params }: { params: { id: string } }) {
             ))}
           </div>
         </motion.div>
-        <div className="flex justify-between">
+        <div className="flex justify-between sticky bottom-0 bg-black bg-opacity-60 py-4 px-2 rounded-lg">
           <motion.button
             onClick={handleBack}
             className="px-6 py-3 bg-gray-700 text-cyan-400 text-lg rounded-lg hover:bg-gray-600 transition-all duration-300"
@@ -101,8 +110,9 @@ export default function QuizPage({ params }: { params: { id: string } }) {
           <motion.button
             onClick={handleNext}
             disabled={!selected}
-            className={`px-6 py-3 text-lg rounded-lg transition-all duration-300
-                      ${selected ? "neon-button" : "bg-gray-700 text-gray-400 cursor-not-allowed"}`}
+            className={`px-6 py-3 text-lg rounded-lg transition-all duration-300 ${
+              selected ? "neon-button" : "bg-gray-700 text-gray-400 cursor-not-allowed"
+            }`}
             whileHover={selected ? { scale: 1.05 } : {}}
             whileTap={selected ? { scale: 0.95 } : {}}
           >
@@ -111,6 +121,5 @@ export default function QuizPage({ params }: { params: { id: string } }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

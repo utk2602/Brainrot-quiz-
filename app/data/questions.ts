@@ -4,7 +4,7 @@ export const questions = [
     question: "What's your favorite meme?",
     type: "image",
     options: [
-      { image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDoge_%2528meme%2529&psig=AOvVaw0MzAajzLdFC7mmMC0QZJe-&ust=1739509533806000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiCn5Dwv4sDFQAAAAAdAAAAABAE", alt: "Doge" },
+      { image: "", alt: "Doge" },
       { image: "", alt: "Pepe" },
       { image: "", alt: "Wojak" },
       { image: "", alt: "Gigachad" },
