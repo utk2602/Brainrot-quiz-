@@ -1,61 +1,61 @@
 export const questions = [
   {
     id: 1,
-    question: "What's your favorite meme? 🧠",
+    question: "Fav meme? 🧠",
     type: "image",
     options: [
-      { image: "/doge.jpg", alt: "Doge 🐕✨ - Such wow, much meme" },
+      { image: "/doge.jpg", alt: "Doge 🐕✨ - Such wow" },
       { image: "/pepe.jpg", alt: "Pepe 🐸💧 - Feels Guy" },
-      { image: "/Wojak_cropped.jpg", alt: "Wojak 🤔💭 - The Sadboi Chronicles" },
-      { image: "/gigachad.jpg", alt: "Gigachad 💪😎 - Sigma Male Vibes" },
+      { image: "/Wojak_cropped.jpg", alt: "Wojak 🤔💭 - Sadboi Vibes" },
+      { image: "/gigachad.jpg", alt: "Gigachad 💪😎 - Sigma Male" },
     ],
   },
 
   {
     id: 2,
-    question: "How much time do you spend glued to your screen? 📱",
+    question: "How long on screens? 📱",
     type: "text",
     options: [
-      "2-4 hours 📱 - Baby Steps 👶",
-      "4-6 hours 📺 - Media Consumption King 👑",
-      "6-8 hours 💻 - Professional Procrastinator 💼",
-      "8+ hours 🧠 - Certified Brainrot 🧠 (Meme Lord Status)",
+      "2-4 hrs 📱 - Baby Steps 👶",
+      "4-6 hrs 📺 - Media King 👑",
+      "6-8 hrs 💻 - Procrastination 💼",
+      "8+ hrs 🧠 - Certified Brainrot 🧠",
     ],
   },
 
   {
     id: 3,
-    question: "What's your brainrot vibe? 🧠",
+    question: "Brainrot vibe? 🧠",
     type: "text",
     options: [
-      "Chaotic Neutral 🔥 - Like a Meme Tornado 🌪️",
-      "Lawful Evil 😈 - Conspiracy Theorist Level: Expert 🕵️‍♂️",
-      "Chaotic Good 🌈 - Saving the World, One Meme at a Time 🌍",
-      "True Neutral 🌊 - Just Here for the Dankness 🦑",
+      "Chaotic Neutral 🔥 - Meme Tornado 🌪️",
+      "Lawful Evil 😈 - Conspiracy Expert 🕵️‍♂️",
+      "Chaotic Good 🌈 - Meme Savior 🌍",
+      "True Neutral 🌊 - Dank Vibes 🦑",
     ],
   },
   
   {
     id: 4,
-    question: "What's your meme vibe? 🌐",
+    question: "Meme vibe? 🌐",
     type: "text",
     options: [
-      "Wholesome ❤️ - It's the Pure Memes for Me 🙏",
-      "Cursed 😈 - Send Help, I'm Lost in the Depths of Reddit 🛸",
-      "Dank 😎 - The Unholy Trinity of Memes ⚡",
-      "Surreal 🌌 - Glitch in the Matrix 🔮",
+      "Wholesome ❤️ - Pure Memes 🙏",
+      "Cursed 😈 - Reddit Lost 🛸",
+      "Dank 😎 - Unholy Trio ⚡",
+      "Surreal 🌌 - Glitchin' 🔮",
     ],
   },
   
   {
     id: 5,
-    question: "What's your go-to brainrot quote? 📢",
+    question: "Go-to quote? 📢",
     type: "text",
     options: [
-      "Touch grass 🌿 - Go Outside, But First... Memes 🌲",
-      "It's giving... 💅 - The Meme Aesthetic 💅",
-      "No cap, fr fr 🧢 - Facts, No Printer 🖨️",
-      "Yeet or be yeeted 💣 - Send It Into the Void 🚀",
+      "Touch grass 🌿 - Memes first 🌲",
+      "It's giving... 💅 - Meme Aesthetic 💅",
+      "No cap 🧢 - Facts, No Printer 🖨️",
+      "Yeet or be yeeted 💣 - Send it 🚀",
     ],
   },
 ]
